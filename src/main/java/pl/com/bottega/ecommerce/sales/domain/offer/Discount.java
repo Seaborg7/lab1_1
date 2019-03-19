@@ -4,18 +4,16 @@ import java.math.BigDecimal;
 
 public class Discount {
 
-	private String currency;
+	Money value;
+	
+	private String cause;
 
-	private String discountCause;
-
-	private BigDecimal value;
-
-	public BigDecimal getDiscount() {
+	public BigDecimal getValue() {
 		return value;
 	}
 
-	public String getDiscountCause() {
-		return discountCause;
+	public String getCause() {
+		return cause;
 	}
 
 	public String getTotalCostCurrency() {
@@ -27,7 +25,7 @@ public class Discount {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((currency == null) ? 0 : currency.hashCode());
-		result = prime * result + ((discountCause == null) ? 0 : discountCause.hashCode());
+		result = prime * result + ((cause == null) ? 0 : cause.hashCode());
 		result = prime * result + ((value == null) ? 0 : value.hashCode());
 		return result;
 	}
@@ -46,10 +44,10 @@ public class Discount {
 				return false;
 		} else if (!currency.equals(other.currency))
 			return false;
-		if (discountCause == null) {
-			if (other.discountCause != null)
+		if (cause == null) {
+			if (other.cause != null)
 				return false;
-		} else if (!discountCause.equals(other.discountCause))
+		} else if (!cause.equals(other.cause))
 			return false;
 		if (value == null) {
 			if (other.value != null)
