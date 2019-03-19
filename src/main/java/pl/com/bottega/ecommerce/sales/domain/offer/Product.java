@@ -5,9 +5,9 @@ import java.util.Date;
 
 public class Product {
 
+	Money price;
+	
 	private String Id;
-
-	private BigDecimal Price;
 
 	private String Name;
 
@@ -25,7 +25,7 @@ public class Product {
 		int result = 1;
 		result = prime * result + ((Id == null) ? 0 : Id.hashCode());
 		result = prime * result + ((Name == null) ? 0 : Name.hashCode());
-		result = prime * result + ((Price == null) ? 0 : Price.hashCode());
+		result = prime * result + ((price == null) ? 0 : price.hashCode());
 		result = prime * result + ((SnapshotDate == null) ? 0 : SnapshotDate.hashCode());
 		result = prime * result + ((Type == null) ? 0 : Type.hashCode());
 		return result;
@@ -50,10 +50,10 @@ public class Product {
 				return false;
 		} else if (!Name.equals(other.Name))
 			return false;
-		if (Price == null) {
-			if (other.Price != null)
+		if (price == null) {
+			if (other.price != null)
 				return false;
-		} else if (!Price.equals(other.Price))
+		} else if (!price.equals(other.price))
 			return false;
 		if (SnapshotDate == null) {
 			if (other.SnapshotDate != null)
@@ -69,7 +69,7 @@ public class Product {
 	}
 
 	public BigDecimal getPrice() {
-		return Price;
+		return price.getValue();
 	}
 
 	public String getName() {
