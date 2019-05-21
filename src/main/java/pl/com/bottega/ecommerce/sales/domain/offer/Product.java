@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Product {
 
-	Money price;
+    private Money price;
 	
 	private String Id;
 

@@ -1,10 +1,11 @@
 package pl.com.bottega.ecommerce.sales.domain.offer;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Discount {
 
-    private Money value;
+    private BigDecimal value;
     private String discountCause;
 
     @Override
@@ -22,7 +23,7 @@ public class Discount {
         return Objects.equals(discountCause, discount.discountCause) && Objects.equals(value, discount.value);
     }
 
-    public Money getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 

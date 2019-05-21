@@ -18,9 +18,9 @@ public class OfferItem {
 
 	private int quantity;
 
-	Discount discount;
+	private Discount discount;
 	Product product;
-	Money money;
+	private Money money;
 
 	public OfferItem(Product product, int quantity, Money money) {
 		this(product, quantity, null, money);
@@ -33,7 +33,7 @@ public class OfferItem {
 
 		BigDecimal discountValue = new BigDecimal(0);
 		if (discount != null) {
-			discountValue = discountValue.subtract(discount.getDiscount());
+			discountValue = discountValue.subtract(discount.getValue());
 		}
 
 		this.money = money;
